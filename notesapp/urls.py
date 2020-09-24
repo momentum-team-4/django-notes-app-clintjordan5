@@ -21,7 +21,10 @@ from notes import views as notes_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('notes/', include('notes/urls')),
+    path('', notes_views.notes_list, name="notes_list"),
+    path('notes/<int:pk>/', notes_views.notes_detail, name='notes_detail'),
+    # path('notes/create>/', notes_views.notes_create, name='notes_create'),
+    # path('notes/update/<int:pk>/', notes_views.notes_update, name='notes_update'),
 ]
 
 if settings.DEBUG:
