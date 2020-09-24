@@ -12,13 +12,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-
 import environ
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False),)
+env = environ.Env(DEBUG=(bool, False),)
 environ.Env.read_env()
+
+print(__file__)
 
 # Build paths inside the project like this: BASE_DIR / ...
 BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -50,6 +49,7 @@ INSTALLED_APPS = [
 
     # Project-specific
     'users',
+    'notes',
 ]
 
 MIDDLEWARE = [
