@@ -3,7 +3,8 @@
 {% block content %}
 <h1>Notes</h1>
     {% for note in notes %}
-        <p><a href = "{%url 'notes_detail' pk=note.pk%}">{{ note.title}}</a></p>
+        <p><a href = "{% url 'notes_detail' pk=note.pk %}">{{ note.title}}</a></p>
         {% endfor %}
+    <p><a href="{%url 'notes_create' %}">Add Note</a></p>
 
 {% endblock %}
